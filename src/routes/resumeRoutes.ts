@@ -1,6 +1,6 @@
 import express from 'express';
 import { uploadResume, deleteResume } from '../controllers/resumeController';
-import { authenticate } from '../middleware/auth';
+import { authenticate } from '../middleare/auth';
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
