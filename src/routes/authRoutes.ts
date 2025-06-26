@@ -1,18 +1,32 @@
-import express from 'express';
+import express from "express";
 import {
-  resetPassword,
-  resetPhone,
+  sendOtpOldEmail,
+  verifyOtpOldEmail,
+  sendOtpNewEmail,
   resetEmail,
-  sendOtp,
-  verifyOtp
-} from '../controllers/authController';
+  sendOtpOldPhone,
+  verifyOtpOldPhone,
+  sendOtpNewPhone,
+  resetPhone,
+  resetPassword,
+} from "../controllers/authController";
 
 const router = express.Router();
 
-router.put('/reset-password', resetPassword);
-router.put('/reset-phone', resetPhone);
-router.put('/reset-email', resetEmail);
-router.post('/send-otp', sendOtp);
-router.post('/verify-otp', verifyOtp);
+
+router.post("/send-otp-old-email", sendOtpOldEmail);
+router.post("/verify-otp-old-email", verifyOtpOldEmail);
+router.post("/send-otp-new-email", sendOtpNewEmail);
+router.put("/reset-email", resetEmail);
+
+
+router.post("/send-otp-old-phone", sendOtpOldPhone);
+router.post("/verify-otp-old-phone", verifyOtpOldPhone);
+router.post("/send-otp-new-phone", sendOtpNewPhone);
+router.put("/reset-phone", resetPhone);
+
+
+router.put("/reset-password", resetPassword);
+
 
 export default router;
